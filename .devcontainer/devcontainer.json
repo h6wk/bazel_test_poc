@@ -10,7 +10,8 @@
 			"extensions": [
 				"ms-azuretools.vscode-docker",
 				"BazelBuild.vscode-bazel",
-				"ms-vscode.cpptools"
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack"
 			]
 		}
 	},

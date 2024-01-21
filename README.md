@@ -1,6 +1,6 @@
-# Bazel test databases running isolated
+# Run bazel test with their own database
 
-Find out how can test instances user their own database connection.
+This is a project that will set up google tests that were executed using the bazel sandboxing concept. The tests or (suites) will have their own databases. The databases will run in a container that is pulled in dynamically into the sandbox (on demand).
 
 ## Bazel sandboxing
 
@@ -18,3 +18,9 @@ Here's a brief overview of how Bazel sandboxing works:
 * Security: Sandboxing enhances the security of the build process. By isolating the build within a sandbox, Bazel can control which files and resources the build process can access. This minimizes the risk of malicious code or unintended access to sensitive files during the build.
 
 * Reproducibility: Bazel aims to provide reproducibility by ensuring that builds are not affected by differences in the local development environment. Sandboxing contributes to this by encapsulating the build process and its dependencies.
+
+## Bazelisk
+
+## Set up a WORKSPACE for Google Tests
+
+https://google.github.io/googletest/quickstart-bazel.html
