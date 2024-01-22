@@ -21,6 +21,46 @@ Here's a brief overview of how Bazel sandboxing works:
 
 ## Bazelisk
 
+Getting started with C++: https://bazel.build/start/cpp
+
+
 ## Set up a WORKSPACE for Google Tests
 
 https://google.github.io/googletest/quickstart-bazel.html
+
+## Targets
+
+```console
+$ bazel query //...
+//:app
+//:hello_test
+```
+
+## Run
+
+```console
+$ bazel run //...
+INFO: Analyzed target //:app (66 packages loaded, 302 targets configured).
+INFO: Found 1 target...
+Target //:app up-to-date:
+  bazel-bin/app
+INFO: Elapsed time: 0.649s, Critical Path: 0.00s
+INFO: 1 process: 1 internal.
+INFO: Build completed successfully, 1 total action
+INFO: Running command line: bazel-bin/app
+Hello Bazel!
+```
+
+## Test
+
+```console
+$ bazel test //...
+INFO: Analyzed 2 targets (0 packages loaded, 0 targets configured).
+INFO: Found 1 target and 1 test target...
+INFO: Elapsed time: 0.232s, Critical Path: 0.07s
+INFO: 2 processes: 1 internal, 1 linux-sandbox.
+INFO: Build completed successfully, 2 total actions
+//:hello_test                                                            PASSED in 0.0s
+
+Executed 1 out of 1 test: 1 test passes.
+```
