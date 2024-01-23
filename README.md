@@ -19,14 +19,22 @@ Here's a brief overview of how Bazel sandboxing works:
 
 * Reproducibility: Bazel aims to provide reproducibility by ensuring that builds are not affected by differences in the local development environment. Sandboxing contributes to this by encapsulating the build process and its dependencies.
 
-## Bazelisk
+# Bazelisk
 
 Getting started with C++: https://bazel.build/start/cpp
 
 
-## Set up a WORKSPACE for Google Tests
+# Set up a WORKSPACE for Google Tests
 
 https://google.github.io/googletest/quickstart-bazel.html
+
+
+# Use rule docker
+
+https://github.com/bazelbuild/rules_docker/releases
+
+
+# Bazel targets and main commands
 
 ## Targets
 
@@ -34,6 +42,23 @@ https://google.github.io/googletest/quickstart-bazel.html
 $ bazel query //...
 //:app
 //:hello_test
+```
+
+## Clean
+
+```console
+$ bazel clean
+```
+
+## Build
+
+```console
+$ bazel build //...
+INFO: Analyzed 2 targets (69 packages loaded, 388 targets configured).
+INFO: Found 2 targets...
+INFO: Elapsed time: 10.488s, Critical Path: 9.68s
+INFO: 34 processes: 13 internal, 21 linux-sandbox.
+INFO: Build completed successfully, 34 total actions
 ```
 
 ## Run
