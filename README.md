@@ -33,6 +33,11 @@ https://google.github.io/googletest/quickstart-bazel.html
 
 https://github.com/bazelbuild/rules_docker/releases
 
+## Examples
+
+Folder: rules_docker/testing/examples
+
+
 
 # Bazel targets and main commands
 
