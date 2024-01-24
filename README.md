@@ -29,15 +29,24 @@ Getting started with C++: https://bazel.build/start/cpp
 https://google.github.io/googletest/quickstart-bazel.html
 
 
-# Use rule docker
+# Use rules_docker
 
 https://github.com/bazelbuild/rules_docker/releases
 
 ## Examples
 
+### The rules_docker example folder
+
 Folder: rules_docker/testing/examples
 
+### Create container images with bazel
 
+https://dev.to/schoren/create-container-images-with-bazel-47am
+
+Issue:
+```console
+ERROR: /home/vscode/.cache/bazel/_bazel_vscode/6d7f2dfd87d2c738b7d62f9bf776efb1/external/io_bazel_rules_docker/platforms/BUILD:78:9: in constraint_values attribute of platform rule @@io_bazel_rules_docker//platforms:image_transition: '@@io_bazel_rules_docker//platforms:image_transition_cpu' does not have mandatory providers: 'ConstraintValueInfo'
+```
 
 # Bazel targets and main commands
 

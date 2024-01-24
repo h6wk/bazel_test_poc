@@ -10,7 +10,7 @@ http_archive(
 
 #### For DOCKER:
 
-# Pull docker rules into bazel
+# Pull rules_docker into bazel
 # The last release: https://github.com/bazelbuild/rules_docker/releases
 http_archive(
   name = "io_bazel_rules_docker",
@@ -22,25 +22,30 @@ http_archive(
 
 #### Docker rules:
 
+
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
 container_repositories()
+
+
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 container_deps()
 
-load("@io_bazel_rules_docker//contrib:dockerfile_build.bzl", "dockerfile_image")
-
-dockerfile_image(
-  name = "basic_alpine_dockerfile",
-  dockerfile = "//docker:Dockerfile",
-)
 
 load("@io_bazel_rules_docker//container:pull.bzl", "container_pull")
-
 container_pull(
   name = "alpine_linux_amd64",
-  digest = "sha256:954b378c375d852eb3c63ab88978f640b4348b01c1b3456a024a81536dafbbf4",
   registry = "index.docker.io",
   repository = "library/alpine",
-  # tag field is ignored since digest is set
+  # digest = "sha256:954b378c375d852eb3c63ab88978f640b4348b01c1b3456a024a81536dafbbf4",
+  # tag field is ignored if digest was set
   tag = "3.8",
 )
+
+
+#load("@io_bazel_rules_docker//contrib:dockerfile_build.bzl", "dockerfile_image")
+#
+#dockerfile_image(
+#  name = "basic_alpine_dockerfile",
+#  dockerfile = "//docker:Dockerfile",
+#)
+
